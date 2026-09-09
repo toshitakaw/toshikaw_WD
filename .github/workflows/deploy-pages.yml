@@ -46,7 +46,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch --orphan pages-output
+          git clean -fdx
           cp -a "$RUNNER_TEMP/wofis-site/." .
-          git add -f .
+          git add .
           git commit -m "Deploy ${GITHUB_SHA}"
           git push --force origin HEAD:gh-pages
