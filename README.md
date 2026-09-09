@@ -31,12 +31,13 @@ pnpm build
 - Theme and responsive layout: `app/globals.css`
 - Supplied images: `public/assets/`
 
-Set `NEXT_PUBLIC_SITE_URL` to the final public origin when a hosting destination is approved.
+Set `NEXT_PUBLIC_SITE_URL` to the final public URL. When publishing beneath a
+GitHub Pages repository path, set `NEXT_PUBLIC_BASE_PATH` to that path too.
 
 ## GitHub Pages
 
-The project is configured for the `toshitakaw.github.io` repository. Every push
+The project is configured for the `toshikaw_WD` repository. Every push
 to `main` builds and publishes the static website through GitHub Actions.
 
-- Repository: `https://github.com/toshitakaw/toshitakaw.github.io`
-- Live site: `https://toshitakaw.github.io`
+- Repository: `https://github.com/toshitakaw/toshikaw_WD`
+- Live site: `https://toshitakaw.github.io/toshikaw_WD/`

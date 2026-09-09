@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { MenuExplorer } from '@/components/menu-explorer';
+import { withBasePath } from '@/lib/paths';
 
 export const dynamic = 'force-static';
 
@@ -26,7 +27,7 @@ export default function MenuPage() {
           </div>
           <div className="menu-hero-art">
             <Image
-              src="/assets/wofis-21.webp"
+              src={withBasePath('/assets/wofis-21.webp')}
               alt="The wooden WOFI’S menu cover"
               fill
               priority

@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 
+import { withBasePath } from '@/lib/paths';
+
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ export default function AboutPage() {
           </div>
           <div className="about-hero-image">
             <Image
-              src="/assets/wofis-02.webp"
+              src={withBasePath('/assets/wofis-02.webp')}
               alt="A mushroom-topped WOFI’S artisan pizza on a wooden board"
               fill
               priority
@@ -58,7 +60,7 @@ export default function AboutPage() {
         <div className="site-container about-collage">
           <div className="collage-tall">
             <Image
-              src="/assets/wofis-16.webp"
+              src={withBasePath('/assets/wofis-16.webp')}
               alt="WOFI’S drinks served inside the restaurant"
               fill
               sizes="(max-width: 700px) 100vw, 38vw"
@@ -71,13 +73,13 @@ export default function AboutPage() {
               Choose a full meal, a quick bite or a drink and dessert. The
               complete menu is designed to be easy to explore.
             </p>
-            <a className="button button-gold" href="/menu">
+            <a className="button button-gold" href={withBasePath('/menu')}>
               Browse the menu <ArrowRightIcon aria-hidden="true" />
             </a>
           </div>
           <div className="collage-square">
             <Image
-              src="/assets/wofis-13.webp"
+              src={withBasePath('/assets/wofis-13.webp')}
               alt="Creamy WOFI’S penne pasta with olives"
               fill
               sizes="(max-width: 700px) 100vw, 30vw"
@@ -99,7 +101,7 @@ export default function AboutPage() {
           </div>
           <div className="brand-detail-image">
             <Image
-              src="/assets/wofis-21.webp"
+              src={withBasePath('/assets/wofis-21.webp')}
               alt="Wooden WOFI’S menu cover on a restaurant table"
               fill
               sizes="(max-width: 800px) 100vw, 48vw"

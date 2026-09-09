@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ArrowRight, MapPin } from 'lucide-react';
 
 import { BUSINESS, ORDER_LINKS } from '@/lib/business';
+import { withBasePath } from '@/lib/paths';
 
 export const dynamic = 'force-static';
 
@@ -11,19 +12,19 @@ const featured = [
     name: 'Classic Margherita',
     price: '₹335',
     description: 'Tomato base sauce, fresh basil and cheese.',
-    image: '/assets/wofis-12.webp',
+    image: withBasePath('/assets/wofis-12.webp'),
   },
   {
     name: 'Spaghetti Aglio Olio',
     price: '₹339',
     description: 'Cherry tomatoes and olives, served with garlic bread.',
-    image: '/assets/wofis-17.webp',
+    image: withBasePath('/assets/wofis-17.webp'),
   },
   {
     name: 'Creamy Oreo Shake',
     price: '₹199',
     description: 'A thick, creamy and chocolatey house shake.',
-    image: '/assets/wofis-20.webp',
+    image: withBasePath('/assets/wofis-20.webp'),
   },
 ];
 
@@ -59,7 +60,7 @@ export default function Home() {
               >
                 Order on Zomato <ArrowRight aria-hidden="true" />
               </a>
-              <a className="button button-ghost" href="/menu">
+              <a className="button button-ghost" href={withBasePath('/menu')}>
                 Explore the menu
               </a>
             </div>
@@ -72,7 +73,7 @@ export default function Home() {
             <div className="hero-image-frame">
               <Image
                 className="hero-image"
-                src="/assets/wofis-07.webp"
+                src={withBasePath('/assets/wofis-07.webp')}
                 alt="A WOFI’S artisan pizza topped with creamy burrata and basil"
                 fill
                 priority
@@ -140,7 +141,7 @@ export default function Home() {
             ))}
           </div>
           <div className="centered-action">
-            <a className="text-link" href="/menu">
+            <a className="text-link" href={withBasePath('/menu')}>
               See all 16 menu categories <ArrowRight aria-hidden="true" />
             </a>
           </div>
@@ -156,13 +157,16 @@ export default function Home() {
               From oven-baked favourites to coffee, coolers and desserts, browse
               the complete menu without pinching or zooming.
             </p>
-            <a className="button button-gold" href="/menu">
+            <a className="button button-gold" href={withBasePath('/menu')}>
               View full menu <ArrowRight aria-hidden="true" />
             </a>
           </div>
           <div className="category-list">
             {categories.map((category, index) => (
-              <a href={`/menu#${category.id}`} key={category.id}>
+              <a
+                href={`${withBasePath('/menu')}#${category.id}`}
+                key={category.id}
+              >
                 <span>0{index + 1}</span>
                 <strong>{category.label}</strong>
                 <ArrowRight aria-hidden="true" />
@@ -176,7 +180,7 @@ export default function Home() {
         <div className="site-container experience-grid">
           <div className="experience-image">
             <Image
-              src="/assets/wofis-06.webp"
+              src={withBasePath('/assets/wofis-06.webp')}
               alt="Green and wood-toned seating inside WOFI’S in Palwal"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
@@ -189,7 +193,7 @@ export default function Home() {
               Deep greens, warm wood and food made to share. Visit WOFI’S in New
               Colony for an easygoing artisan dining experience.
             </p>
-            <a className="text-link" href="/visit">
+            <a className="text-link" href={withBasePath('/visit')}>
               Plan your visit <ArrowRight aria-hidden="true" />
             </a>
           </div>
@@ -214,7 +218,7 @@ export default function Home() {
         <div className="site-container gallery-grid">
           <div className="gallery-wide">
             <Image
-              src="/assets/wofis-01.webp"
+              src={withBasePath('/assets/wofis-01.webp')}
               alt="A freshly baked WOFI’S artisan pizza"
               fill
               sizes="(max-width: 700px) 100vw, 50vw"
@@ -222,7 +226,7 @@ export default function Home() {
           </div>
           <div>
             <Image
-              src="/assets/wofis-15.webp"
+              src={withBasePath('/assets/wofis-15.webp')}
               alt="Crispy fries from WOFI’S"
               fill
               sizes="(max-width: 700px) 50vw, 25vw"
@@ -230,7 +234,7 @@ export default function Home() {
           </div>
           <div>
             <Image
-              src="/assets/wofis-03.webp"
+              src={withBasePath('/assets/wofis-03.webp')}
               alt="A WOFI’S creamy chocolate cookie shake"
               fill
               sizes="(max-width: 700px) 50vw, 25vw"

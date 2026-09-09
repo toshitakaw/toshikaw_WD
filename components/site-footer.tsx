@@ -2,6 +2,7 @@
 import { MapPin, Phone } from 'lucide-react';
 
 import { BUSINESS, ORDER_LINKS } from '@/lib/business';
+import { withBasePath } from '@/lib/paths';
 
 export function SiteFooter() {
   return (
@@ -13,9 +14,9 @@ export function SiteFooter() {
         </div>
         <div>
           <h2>Explore</h2>
-          <a href="/menu">Menu</a>
-          <a href="/about">About</a>
-          <a href="/visit">Visit us</a>
+          <a href={withBasePath('/menu')}>Menu</a>
+          <a href={withBasePath('/about')}>About</a>
+          <a href={withBasePath('/visit')}>Visit us</a>
         </div>
         <div>
           <h2>Find us</h2>

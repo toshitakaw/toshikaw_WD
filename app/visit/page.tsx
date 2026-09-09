@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 import { BUSINESS, ORDER_LINKS } from '@/lib/business';
+import { withBasePath } from '@/lib/paths';
 
 export const dynamic = 'force-static';
 
@@ -23,7 +24,7 @@ export default function VisitPage() {
       <section className="visit-hero">
         <div className="visit-hero-image">
           <Image
-            src="/assets/wofis-06.webp"
+            src={withBasePath('/assets/wofis-06.webp')}
             alt="The warm green-and-wood interior at WOFI’S Palwal"
             fill
             priority

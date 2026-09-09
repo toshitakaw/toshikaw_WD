@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { ORDER_LINKS } from '@/lib/business';
+import { withBasePath } from '@/lib/paths';
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -27,9 +28,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-container header-inner">
-        <a className="brand" href="/" aria-label="WOFI’S home">
+        <a className="brand" href={withBasePath('/')} aria-label="WOFI’S home">
           <Image
-            src="/assets/wofis-08.webp"
+            src={withBasePath('/assets/wofis-08.webp')}
             alt=""
             width={52}
             height={52}
@@ -42,7 +43,7 @@ export function SiteHeader() {
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
-            <a href={item.href} key={item.href}>
+            <a href={withBasePath(item.href)} key={item.href}>
               {item.label}
             </a>
           ))}
@@ -68,7 +69,12 @@ export function SiteHeader() {
               {nav.map((item) => (
                 <SheetClose
                   key={item.href}
-                  render={<a aria-label={item.label} href={item.href} />}
+                  render={
+                    <a
+                      aria-label={item.label}
+                      href={withBasePath(item.href)}
+                    />
+                  }
                 >
                   {item.label}
                 </SheetClose>
