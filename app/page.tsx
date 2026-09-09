@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ArrowRight, MapPin } from 'lucide-react';
 
 import { BUSINESS, ORDER_LINKS } from '@/lib/business';
-import { withBasePath } from '@/lib/paths';
+import { pagePath, withBasePath } from '@/lib/paths';
 
 export const dynamic = 'force-static';
 
@@ -60,7 +60,7 @@ export default function Home() {
               >
                 Order on Zomato <ArrowRight aria-hidden="true" />
               </a>
-              <a className="button button-ghost" href={withBasePath('/menu')}>
+              <a className="button button-ghost" href={pagePath('/menu')}>
                 Explore the menu
               </a>
             </div>
@@ -141,7 +141,7 @@ export default function Home() {
             ))}
           </div>
           <div className="centered-action">
-            <a className="text-link" href={withBasePath('/menu')}>
+            <a className="text-link" href={pagePath('/menu')}>
               See all 16 menu categories <ArrowRight aria-hidden="true" />
             </a>
           </div>
@@ -157,14 +157,14 @@ export default function Home() {
               From oven-baked favourites to coffee, coolers and desserts, browse
               the complete menu without pinching or zooming.
             </p>
-            <a className="button button-gold" href={withBasePath('/menu')}>
+            <a className="button button-gold" href={pagePath('/menu')}>
               View full menu <ArrowRight aria-hidden="true" />
             </a>
           </div>
           <div className="category-list">
             {categories.map((category, index) => (
               <a
-                href={`${withBasePath('/menu')}#${category.id}`}
+                href={`${pagePath('/menu')}#${category.id}`}
                 key={category.id}
               >
                 <span>0{index + 1}</span>
@@ -193,7 +193,7 @@ export default function Home() {
               Deep greens, warm wood and food made to share. Visit WOFI’S in New
               Colony for an easygoing artisan dining experience.
             </p>
-            <a className="text-link" href={withBasePath('/visit')}>
+            <a className="text-link" href={pagePath('/visit')}>
               Plan your visit <ArrowRight aria-hidden="true" />
             </a>
           </div>

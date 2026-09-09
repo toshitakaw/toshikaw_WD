@@ -15,9 +15,12 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { ORDER_LINKS } from '@/lib/business';
-import { withBasePath } from '@/lib/paths';
+import { pagePath, withBasePath } from '@/lib/paths';
 
-const nav = [
+const nav: Array<{
+  href: '/' | '/menu' | '/about' | '/visit';
+  label: string;
+}> = [
   { href: '/', label: 'Home' },
   { href: '/menu', label: 'Menu' },
   { href: '/about', label: 'About' },
@@ -28,7 +31,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-container header-inner">
-        <a className="brand" href={withBasePath('/')} aria-label="WOFI’S home">
+        <a className="brand" href={pagePath('/')} aria-label="WOFI’S home">
           <Image
             src={withBasePath('/assets/wofis-08.webp')}
             alt=""
@@ -43,7 +46,7 @@ export function SiteHeader() {
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map((item) => (
-            <a href={withBasePath(item.href)} key={item.href}>
+            <a href={pagePath(item.href)} key={item.href}>
               {item.label}
             </a>
           ))}
@@ -72,7 +75,7 @@ export function SiteHeader() {
                   render={
                     <a
                       aria-label={item.label}
-                      href={withBasePath(item.href)}
+                      href={pagePath(item.href)}
                     />
                   }
                 >

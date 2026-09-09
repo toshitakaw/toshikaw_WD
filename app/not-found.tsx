@@ -1,4 +1,4 @@
-import { withBasePath } from '@/lib/paths';
+import { pagePath } from '@/lib/paths';
 
 export default function NotFound() {
   return (
@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="eyebrow">404</p>
       <h1>This table is not on the menu.</h1>
       <p>The page you are looking for may have moved.</p>
-      <a className="button button-primary" href={withBasePath('/')}>
+      <a className="button button-primary" href={pagePath('/')}>
         Back to WOFI’S
       </a>
     </main>

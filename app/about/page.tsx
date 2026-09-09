@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowRightIcon } from 'lucide-react';
 
-import { withBasePath } from '@/lib/paths';
+import { pagePath, withBasePath } from '@/lib/paths';
 
 export const dynamic = 'force-static';
 
@@ -73,7 +73,7 @@ export default function AboutPage() {
               Choose a full meal, a quick bite or a drink and dessert. The
               complete menu is designed to be easy to explore.
             </p>
-            <a className="button button-gold" href={withBasePath('/menu')}>
+            <a className="button button-gold" href={pagePath('/menu')}>
               Browse the menu <ArrowRightIcon aria-hidden="true" />
             </a>
           </div>
